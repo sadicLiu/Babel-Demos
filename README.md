@@ -14,7 +14,7 @@
     "plugins": []
   }
   ```
-- 转码规则:
+- 转码规则:  
   ```
   <!-- ES2015转码规则 -->
   npm install --save-dev babel-preset-es2015
@@ -25,7 +25,7 @@
 ## 命令行转码babel-cli
 - Babel提供babel-cli工具，用于命令行转码  
   `npm install --global babel-cli`
-- 基本用法
+- 基本用法  
   ```
   <!-- 转码结果输出到标准输出 -->
   babel example.js
@@ -48,7 +48,7 @@
 - 上面代码是在全局环境下，进行Babel转码。这意味着，如果项目要运行，全局环境必须有Babel，也就是说项目产生了对环境的依赖。另一方面，这样做也无法支持不同项目使用不同版本的Babel
 - 一个解决办法是将babel-cli安装在项目之中  
   `npm install --save-dev babel-cli`  
-  然后，改写package.json
+  然后，改写package.json  
   ```
   {
     // ...
@@ -66,7 +66,7 @@
 ## babel-node
 - babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码
 - 它不用单独安装，而是随babel-cli一起安装。然后，执行babel-node就进入PEPL环境
-- babel-node命令可以直接运行ES6脚本。将上面的代码放入脚本文件es6.js，然后直接运行
+- babel-node命令可以直接运行ES6脚本。将上面的代码放入脚本文件es6.js，然后直接运行  
   `babel-node .\src\example.js`
 
 ## babel-register
@@ -77,9 +77,9 @@
 
 ## babel-polyfill
 - Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码
-- 举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片
+- 举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片  
   1. `npm install --save babel-polyfill`
-  2. 在脚本头部加入如下代码
+  2. 在脚本头部加入如下代码  
     ```
     import 'babel-polyfill';
     // 或者
@@ -95,7 +95,7 @@
   // Your ES6 code
   </script>
   ```
-- 另一种方法是使用babel-standalone模块提供的浏览器版本，将其插入网页
+- 另一种方法是使用babel-standalone模块提供的浏览器版本，将其插入网页  
   ```
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
   <script type="text/babel">
